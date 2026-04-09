@@ -1,586 +1,707 @@
 <!DOCTYPE html>
 <html lang="id" class="scroll-smooth">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Terator - Template Surat Generator | Buat Surat Resmi dalam Hitungan Detik</title>
-  <meta name="description" content="Terator adalah aplikasi generator template surat resmi terlengkap. Ratusan template siap pakai, edit cepat, export PDF, dan simpan draft. Download gratis sekarang!" />
-  <meta name="keywords" content="template surat, generator surat, surat resmi, surat dinas, aplikasi surat, terator" />
-  <meta name="author" content="nexadream.id" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Terator - Template Surat Generator | Buat Surat Resmi dalam Hitungan Detik</title>
+    <meta name="description"
+        content="Terator adalah aplikasi generator template surat resmi terlengkap. Ratusan template siap pakai, edit cepat, export PDF, dan simpan draft. Download gratis sekarang!" />
+    <meta name="keywords"
+        content="template surat, generator surat, surat resmi, surat dinas, aplikasi surat, terator" />
+    <meta name="author" content="nexadream.id" />
 
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet" />
 
-  <!-- Tailwind CSS CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            inter: ['Inter', 'sans-serif'],
-          },
-          colors: {
-            primary: {
-              50: '#eef2ff',
-              100: '#e0e7ff',
-              200: '#c7d2fe',
-              300: '#a5b4fc',
-              400: '#818cf8',
-              500: '#6366f1',
-              600: '#4f46e5',
-              700: '#4338ca',
-              800: '#3730a3',
-              900: '#312e81',
-              950: '#1e1b4b',
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        inter: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: {
+                            50: '#eef2ff',
+                            100: '#e0e7ff',
+                            200: '#c7d2fe',
+                            300: '#a5b4fc',
+                            400: '#818cf8',
+                            500: '#6366f1',
+                            600: '#4f46e5',
+                            700: '#4338ca',
+                            800: '#3730a3',
+                            900: '#312e81',
+                            950: '#1e1b4b',
+                        },
+                        accent: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            200: '#bae6fd',
+                            300: '#7dd3fc',
+                            400: '#38bdf8',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            700: '#0369a1',
+                        },
+                    },
+                },
             },
-            accent: {
-              50: '#f0f9ff',
-              100: '#e0f2fe',
-              200: '#bae6fd',
-              300: '#7dd3fc',
-              400: '#38bdf8',
-              500: '#0ea5e9',
-              600: '#0284c7',
-              700: '#0369a1',
-            },
-          },
-        },
-      },
-    }
-  </script>
+        }
+    </script>
 
-  <!-- FontAwesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 
-  <!-- Custom CSS -->
-  <link rel="stylesheet" href="style.css" />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css" />
 
-  <!-- Favicon -->
-  <link rel="icon" href="logo/terator.png" type="image/png" />
+    <!-- Favicon -->
+    <link rel="icon" href="logo/terator.png" type="image/png" />
 </head>
+
 <body class="font-inter text-gray-800 bg-white antialiased overflow-x-hidden">
 
-  <!-- ==================== NAVBAR ==================== -->
-  <nav id="navbar" class="fixed top-0 left-0 w-full z-50 transition-all duration-500 bg-transparent">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex items-center justify-between h-16 lg:h-20">
-        <!-- Logo -->
-        <a href="#" class="flex items-center gap-3 group">
-          <img src="logo/terator.png" alt="Logo Terator" class="h-9 w-9 rounded-xl shadow-md group-hover:scale-110 transition-transform duration-300" id="navbar-logo" />
-          <span class="font-extrabold text-xl tracking-tight text-white transition-colors duration-300" id="navbar-title">Terator</span>
-        </a>
+    <!-- ==================== NAVBAR ==================== -->
+    <nav id="navbar" class="fixed top-0 left-0 w-full z-50 transition-all duration-500 bg-transparent">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16 lg:h-20">
+                <!-- Logo -->
+                <a href="#" class="flex items-center gap-3 group">
+                    <img src="logo/terator.png" alt="Logo Terator"
+                        class="h-9 w-9 rounded-xl shadow-md group-hover:scale-110 transition-transform duration-300"
+                        id="navbar-logo" />
+                    <span class="font-extrabold text-xl tracking-tight text-white transition-colors duration-300"
+                        id="navbar-title">Terator</span>
+                </a>
 
-        <!-- Desktop Menu -->
-        <div class="hidden md:flex items-center gap-8">
-          <a href="#fitur" class="nav-link text-white/80 hover:text-white font-medium text-sm tracking-wide transition-colors duration-300">Fitur</a>
-          <a href="#cara-kerja" class="nav-link text-white/80 hover:text-white font-medium text-sm tracking-wide transition-colors duration-300">Cara Kerja</a>
-          <a href="#tutorial" class="nav-link text-white/80 hover:text-white font-medium text-sm tracking-wide transition-colors duration-300">Tutorial</a>
-          <a href="#kontak" class="nav-link text-white/80 hover:text-white font-medium text-sm tracking-wide transition-colors duration-300">Kontak</a>
-          <a href="https://play.google.com/store/apps/details?id=com.caraguna.terator&hl=en" target="_blank" rel="noopener noreferrer"
-             class="bg-white text-primary-700 hover:bg-primary-50 font-semibold text-sm px-6 py-2.5 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-0.5">
-            <i class="fa-brands fa-google-play mr-2"></i>Download Sekarang
-          </a>
-        </div>
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="#fitur"
+                        class="nav-link text-white/80 hover:text-white font-medium text-sm tracking-wide transition-colors duration-300">Fitur</a>
+                    <a href="#cara-kerja"
+                        class="nav-link text-white/80 hover:text-white font-medium text-sm tracking-wide transition-colors duration-300">Cara
+                        Kerja</a>
+                    <a href="#tutorial"
+                        class="nav-link text-white/80 hover:text-white font-medium text-sm tracking-wide transition-colors duration-300">Tutorial</a>
+                    <a href="#kontak"
+                        class="nav-link text-white/80 hover:text-white font-medium text-sm tracking-wide transition-colors duration-300">Kontak</a>
+                    <a href="https://play.google.com/store/apps/details?id=com.caraguna.terator&hl=en" target="_blank"
+                        rel="noopener noreferrer"
+                        class="bg-white text-primary-700 hover:bg-primary-50 font-semibold text-sm px-6 py-2.5 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-0.5">
+                        <i class="fa-brands fa-google-play mr-2"></i>Download Sekarang
+                    </a>
+                </div>
 
-        <!-- Mobile Menu Button -->
-        <button id="mobile-menu-btn" class="md:hidden text-white p-2 rounded-lg hover:bg-white/10 transition-colors" aria-label="Toggle menu">
-          <i class="fa-solid fa-bars text-xl" id="menu-icon"></i>
-        </button>
-      </div>
-    </div>
-
-    <!-- Mobile Menu -->
-    <div id="mobile-menu" class="md:hidden hidden bg-white/95 backdrop-blur-xl shadow-2xl border-t border-gray-100">
-      <div class="px-6 py-6 space-y-4">
-        <a href="#fitur" class="mobile-nav-link block text-gray-700 hover:text-primary-600 font-medium text-base py-2 transition-colors">Fitur</a>
-        <a href="#cara-kerja" class="mobile-nav-link block text-gray-700 hover:text-primary-600 font-medium text-base py-2 transition-colors">Cara Kerja</a>
-        <a href="#tutorial" class="mobile-nav-link block text-gray-700 hover:text-primary-600 font-medium text-base py-2 transition-colors">Tutorial</a>
-        <a href="#kontak" class="mobile-nav-link block text-gray-700 hover:text-primary-600 font-medium text-base py-2 transition-colors">Kontak</a>
-        <a href="https://play.google.com/store/apps/details?id=com.caraguna.terator&hl=en" target="_blank" rel="noopener noreferrer"
-           class="block text-center bg-primary-600 text-white font-semibold text-base px-6 py-3 rounded-xl shadow-lg hover:bg-primary-700 transition-all duration-300">
-          <i class="fa-brands fa-google-play mr-2"></i>Download Sekarang
-        </a>
-      </div>
-    </div>
-  </nav>
-
-  <!-- ==================== HERO SECTION ==================== -->
-  <section id="hero" class="relative min-h-screen flex items-center overflow-hidden">
-    <!-- Background Gradient -->
-    <div class="absolute inset-0 bg-gradient-to-br from-primary-950 via-primary-800 to-accent-700"></div>
-    <!-- Decorative Shapes -->
-    <div class="absolute inset-0 overflow-hidden">
-      <div class="absolute -top-40 -right-40 w-[600px] h-[600px] bg-primary-500/20 rounded-full blur-3xl animate-pulse-slow"></div>
-      <div class="absolute -bottom-40 -left-40 w-[500px] h-[500px] bg-accent-500/20 rounded-full blur-3xl animate-pulse-slow" style="animation-delay: 2s;"></div>
-      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary-400/10 rounded-full blur-3xl"></div>
-    </div>
-    <!-- Grid Pattern Overlay -->
-    <div class="absolute inset-0 opacity-[0.03]" style="background-image: url('data:image/svg+xml,%3Csvg width=&quot;60&quot; height=&quot;60&quot; viewBox=&quot;0 0 60 60&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;%3E%3Cg fill=&quot;none&quot; fill-rule=&quot;evenodd&quot;%3E%3Cg fill=&quot;%23ffffff&quot; fill-opacity=&quot;1&quot;%3E%3Cpath d=&quot;M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z&quot;/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
-
-    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 lg:py-40">
-      <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-        <!-- Left Content -->
-        <div class="text-center lg:text-left" data-reveal="left">
-          <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2 mb-6">
-            <span class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
-            <span class="text-white/90 text-sm font-medium">Tersedia di Google Play Store</span>
-          </div>
-          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-6">
-            Buat Surat Resmi
-            <span class="bg-gradient-to-r from-accent-300 to-blue-300 bg-clip-text text-transparent"> dalam Hitungan Detik</span>
-          </h1>
-          <p class="text-lg sm:text-xl text-white/70 leading-relaxed mb-8 max-w-xl mx-auto lg:mx-0">
-            Terator menyediakan ratusan template surat siap pakai. Cukup pilih, isi data, dan langsung cetak atau unduh dalam format PDF. Semudah itu!
-          </p>
-          <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-            <a href="https://play.google.com/store/apps/details?id=com.caraguna.terator&hl=en" target="_blank" rel="noopener noreferrer"
-               class="group inline-flex items-center justify-center gap-3 bg-white text-primary-700 font-bold text-base px-8 py-4 rounded-2xl shadow-2xl hover:shadow-white/25 hover:-translate-y-1 transition-all duration-300">
-              <i class="fa-brands fa-google-play text-xl group-hover:scale-110 transition-transform"></i>
-              Download di Play Store
-            </a>
-            <a href="#fitur"
-               class="inline-flex items-center justify-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 text-white font-semibold text-base px-8 py-4 rounded-2xl hover:bg-white/20 transition-all duration-300">
-              <i class="fa-solid fa-arrow-down text-sm"></i>
-              Pelajari Lebih Lanjut
-            </a>
-          </div>
-
-          <!-- Stats -->
-          <div class="flex items-center gap-8 mt-10 justify-center lg:justify-start">
-            <div class="text-center">
-              <div class="text-2xl font-bold text-white">100+</div>
-              <div class="text-white/50 text-xs mt-1">Template Surat</div>
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn"
+                    class="md:hidden text-white p-2 rounded-lg hover:bg-white/10 transition-colors"
+                    aria-label="Toggle menu">
+                    <i class="fa-solid fa-bars text-xl" id="menu-icon"></i>
+                </button>
             </div>
-            <div class="w-px h-10 bg-white/20"></div>
-            <div class="text-center">
-              <div class="text-2xl font-bold text-white">10K+</div>
-              <div class="text-white/50 text-xs mt-1">Pengguna</div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden hidden bg-white/95 backdrop-blur-xl shadow-2xl border-t border-gray-100">
+            <div class="px-6 py-6 space-y-4">
+                <a href="#fitur"
+                    class="mobile-nav-link block text-gray-700 hover:text-primary-600 font-medium text-base py-2 transition-colors">Fitur</a>
+                <a href="#cara-kerja"
+                    class="mobile-nav-link block text-gray-700 hover:text-primary-600 font-medium text-base py-2 transition-colors">Cara
+                    Kerja</a>
+                <a href="#tutorial"
+                    class="mobile-nav-link block text-gray-700 hover:text-primary-600 font-medium text-base py-2 transition-colors">Tutorial</a>
+                <a href="#kontak"
+                    class="mobile-nav-link block text-gray-700 hover:text-primary-600 font-medium text-base py-2 transition-colors">Kontak</a>
+                <a href="https://play.google.com/store/apps/details?id=com.caraguna.terator&hl=en" target="_blank"
+                    rel="noopener noreferrer"
+                    class="block text-center bg-primary-600 text-white font-semibold text-base px-6 py-3 rounded-xl shadow-lg hover:bg-primary-700 transition-all duration-300">
+                    <i class="fa-brands fa-google-play mr-2"></i>Download Sekarang
+                </a>
             </div>
-            <div class="w-px h-10 bg-white/20"></div>
-            <div class="text-center">
-              <div class="text-2xl font-bold text-white">4.5<i class="fa-solid fa-star text-yellow-400 text-sm ml-1"></i></div>
-              <div class="text-white/50 text-xs mt-1">Rating</div>
+        </div>
+    </nav>
+
+    <!-- ==================== HERO SECTION ==================== -->
+    <section id="hero" class="relative min-h-screen flex items-center overflow-hidden">
+        <!-- Background Gradient -->
+        <div class="absolute inset-0 bg-gradient-to-br from-primary-950 via-primary-800 to-accent-700"></div>
+        <!-- Decorative Shapes -->
+        <div class="absolute inset-0 overflow-hidden">
+            <div
+                class="absolute -top-40 -right-40 w-[600px] h-[600px] bg-primary-500/20 rounded-full blur-3xl animate-pulse-slow">
             </div>
-          </div>
-        </div>
-
-        <!-- Right - Phone Mockup -->
-        <div class="relative flex justify-center lg:justify-end" data-reveal="right">
-          <div class="relative">
-            <!-- Glow Effect -->
-            <div class="absolute inset-0 bg-gradient-to-br from-primary-400/30 to-accent-400/30 blur-3xl rounded-full scale-110"></div>
-            <!-- Phone Frame -->
-            <div class="relative bg-gray-900 rounded-[3rem] p-3 shadow-2xl shadow-black/40 border border-white/10 max-w-[280px] sm:max-w-[300px]">
-              <div class="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-6 bg-gray-900 rounded-b-2xl z-10"></div>
-              <img src="screenshoots/home.jpeg" alt="Tampilan utama aplikasi Terator" class="rounded-[2.4rem] w-full" />
+            <div class="absolute -bottom-40 -left-40 w-[500px] h-[500px] bg-accent-500/20 rounded-full blur-3xl animate-pulse-slow"
+                style="animation-delay: 2s;"></div>
+            <div
+                class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary-400/10 rounded-full blur-3xl">
             </div>
-            <!-- Floating Cards -->
-            <div class="absolute -left-8 top-1/4 bg-white/95 backdrop-blur-sm rounded-2xl p-3 shadow-xl animate-float hidden sm:flex items-center gap-3">
-              <div class="w-10 h-10 bg-green-100 rounded-xl flex items-center justify-center">
-                <i class="fa-solid fa-file-pdf text-green-600"></i>
-              </div>
-              <div>
-                <div class="text-xs font-bold text-gray-800">Export PDF</div>
-                <div class="text-[10px] text-gray-500">Siap cetak!</div>
-              </div>
+        </div>
+        <!-- Grid Pattern Overlay -->
+        <div class="absolute inset-0 opacity-[0.03]"
+            style="background-image: url('data:image/svg+xml,%3Csvg width=&quot;60&quot; height=&quot;60&quot; viewBox=&quot;0 0 60 60&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;%3E%3Cg fill=&quot;none&quot; fill-rule=&quot;evenodd&quot;%3E%3Cg fill=&quot;%23ffffff&quot; fill-opacity=&quot;1&quot;%3E%3Cpath d=&quot;M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z&quot;/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');">
+        </div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 lg:py-40">
+            <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                <!-- Left Content -->
+                <div class="text-center lg:text-left" data-reveal="left">
+                    <div
+                        class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2 mb-6">
+                        <span class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
+                        <span class="text-white/90 text-sm font-medium">Tersedia di Google Play Store</span>
+                    </div>
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-6">
+                        Buat Surat Resmi
+                        <span class="bg-gradient-to-r from-accent-300 to-blue-300 bg-clip-text text-transparent"> dalam
+                            Hitungan Detik</span>
+                    </h1>
+                    <p class="text-lg sm:text-xl text-white/70 leading-relaxed mb-8 max-w-xl mx-auto lg:mx-0">
+                        Terator menyediakan ratusan template surat siap pakai. Cukup pilih, isi data, dan langsung cetak
+                        atau unduh dalam format PDF. Semudah itu!
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                        <a href="https://play.google.com/store/apps/details?id=com.caraguna.terator&hl=en"
+                            target="_blank" rel="noopener noreferrer"
+                            class="group inline-flex items-center justify-center gap-3 bg-white text-primary-700 font-bold text-base px-8 py-4 rounded-2xl shadow-2xl hover:shadow-white/25 hover:-translate-y-1 transition-all duration-300">
+                            <i class="fa-brands fa-google-play text-xl group-hover:scale-110 transition-transform"></i>
+                            Download di Play Store
+                        </a>
+                        <a href="#fitur"
+                            class="inline-flex items-center justify-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 text-white font-semibold text-base px-8 py-4 rounded-2xl hover:bg-white/20 transition-all duration-300">
+                            <i class="fa-solid fa-arrow-down text-sm"></i>
+                            Pelajari Lebih Lanjut
+                        </a>
+                    </div>
+
+                    <!-- Stats -->
+                    <div class="flex items-center gap-8 mt-10 justify-center lg:justify-start">
+                        <div class="text-center">
+                            <div class="text-2xl font-bold text-white">100+</div>
+                            <div class="text-white/50 text-xs mt-1">Template Surat</div>
+                        </div>
+                        <div class="w-px h-10 bg-white/20"></div>
+                        <div class="text-center">
+                            <div class="text-2xl font-bold text-white">5K+</div>
+                            <div class="text-white/50 text-xs mt-1">Pengguna</div>
+                        </div>
+                        <div class="w-px h-10 bg-white/20"></div>
+                        <div class="text-center">
+                            <div class="text-2xl font-bold text-white">4<i
+                                    class="fa-solid fa-star text-yellow-400 text-sm ml-1"></i></div>
+                            <div class="text-white/50 text-xs mt-1">Rating</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right - Phone Mockup -->
+                <div class="relative flex justify-center lg:justify-end" data-reveal="right">
+                    <div class="relative">
+                        <!-- Glow Effect -->
+                        <div
+                            class="absolute inset-0 bg-gradient-to-br from-primary-400/30 to-accent-400/30 blur-3xl rounded-full scale-110">
+                        </div>
+                        <!-- Phone Frame -->
+                        <div
+                            class="relative bg-gray-900 rounded-[3rem] p-3 shadow-2xl shadow-black/40 border border-white/10 max-w-[280px] sm:max-w-[300px]">
+                            <div
+                                class="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-6 bg-gray-900 rounded-b-2xl z-10">
+                            </div>
+                            <img src="screenshoots/home.jpeg" alt="Tampilan utama aplikasi Terator"
+                                class="rounded-[2.4rem] w-full" />
+                        </div>
+                        <!-- Floating Cards -->
+                        <div
+                            class="absolute -left-8 top-1/4 bg-white/95 backdrop-blur-sm rounded-2xl p-3 shadow-xl animate-float hidden sm:flex items-center gap-3">
+                            <div class="w-10 h-10 bg-green-100 rounded-xl flex items-center justify-center">
+                                <i class="fa-solid fa-file-pdf text-green-600"></i>
+                            </div>
+                            <div>
+                                <div class="text-xs font-bold text-gray-800">Export PDF</div>
+                                <div class="text-[10px] text-gray-500">Siap cetak!</div>
+                            </div>
+                        </div>
+                        <div class="absolute -right-6 bottom-1/3 bg-white/95 backdrop-blur-sm rounded-2xl p-3 shadow-xl animate-float hidden sm:flex items-center gap-3"
+                            style="animation-delay: 1.5s;">
+                            <div class="w-10 h-10 bg-blue-100 rounded-xl flex items-center justify-center">
+                                <i class="fa-solid fa-bolt text-blue-600"></i>
+                            </div>
+                            <div>
+                                <div class="text-xs font-bold text-gray-800">Super Cepat</div>
+                                <div class="text-[10px] text-gray-500">
+                                    < 1 Menit</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="absolute -right-6 bottom-1/3 bg-white/95 backdrop-blur-sm rounded-2xl p-3 shadow-xl animate-float hidden sm:flex items-center gap-3" style="animation-delay: 1.5s;">
-              <div class="w-10 h-10 bg-blue-100 rounded-xl flex items-center justify-center">
-                <i class="fa-solid fa-bolt text-blue-600"></i>
-              </div>
-              <div>
-                <div class="text-xs font-bold text-gray-800">Super Cepat</div>
-                <div class="text-[10px] text-gray-500">< 1 Menit</div>
-              </div>
+
+            <!-- Scroll Indicator -->
+            <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 hidden lg:block">
+                <div class="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center">
+                    <div class="w-1.5 h-3 bg-white/60 rounded-full mt-2 animate-bounce"></div>
+                </div>
             </div>
-          </div>
+    </section>
+
+    <!-- ==================== FITUR UTAMA ==================== -->
+    <section id="fitur" class="py-24 lg:py-32 bg-gray-50 relative overflow-hidden">
+        <!-- Decorative -->
+        <div
+            class="absolute top-0 right-0 w-96 h-96 bg-primary-100/50 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl">
         </div>
-      </div>
-    </div>
-
-    <!-- Scroll Indicator -->
-    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 hidden lg:block">
-      <div class="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center">
-        <div class="w-1.5 h-3 bg-white/60 rounded-full mt-2 animate-bounce"></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ==================== FITUR UTAMA ==================== -->
-  <section id="fitur" class="py-24 lg:py-32 bg-gray-50 relative overflow-hidden">
-    <!-- Decorative -->
-    <div class="absolute top-0 right-0 w-96 h-96 bg-primary-100/50 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl"></div>
-    <div class="absolute bottom-0 left-0 w-80 h-80 bg-accent-100/50 rounded-full translate-y-1/2 -translate-x-1/2 blur-3xl"></div>
-
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-      <!-- Section Header -->
-      <div class="text-center max-w-3xl mx-auto mb-16 lg:mb-20" data-reveal="up">
-        <span class="inline-block bg-primary-100 text-primary-700 text-sm font-semibold px-4 py-1.5 rounded-full mb-4">Fitur Unggulan</span>
-        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 mb-5">
-          Semua yang Anda Butuhkan untuk <span class="text-primary-600">Membuat Surat</span>
-        </h2>
-        <p class="text-lg text-gray-500 leading-relaxed">
-          Terator dirancang untuk mempermudah pembuatan surat resmi dengan fitur-fitur canggih yang intuitif dan mudah digunakan.
-        </p>
-      </div>
-
-      <!-- Features Grid -->
-      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
-        <!-- Feature 1 -->
-        <div class="feature-card group bg-white rounded-3xl p-8 shadow-sm hover:shadow-2xl border border-gray-100 hover:border-primary-200 transition-all duration-500 hover:-translate-y-2" data-reveal="up" data-delay="0">
-          <div class="w-14 h-14 bg-gradient-to-br from-primary-500 to-primary-700 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 shadow-lg shadow-primary-200">
-            <i class="fa-solid fa-file-lines text-white text-xl"></i>
-          </div>
-          <h3 class="text-xl font-bold text-gray-900 mb-3">Ratusan Template</h3>
-          <p class="text-gray-500 leading-relaxed text-sm">Koleksi lengkap template surat resmi, dinas, pribadi, dan bisnis yang siap pakai kapan saja.</p>
+        <div
+            class="absolute bottom-0 left-0 w-80 h-80 bg-accent-100/50 rounded-full translate-y-1/2 -translate-x-1/2 blur-3xl">
         </div>
 
-        <!-- Feature 2 -->
-        <div class="feature-card group bg-white rounded-3xl p-8 shadow-sm hover:shadow-2xl border border-gray-100 hover:border-accent-200 transition-all duration-500 hover:-translate-y-2" data-reveal="up" data-delay="100">
-          <div class="w-14 h-14 bg-gradient-to-br from-accent-500 to-accent-700 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 shadow-lg shadow-accent-200">
-            <i class="fa-solid fa-pen-to-square text-white text-xl"></i>
-          </div>
-          <h3 class="text-xl font-bold text-gray-900 mb-3">Edit Cepat</h3>
-          <p class="text-gray-500 leading-relaxed text-sm">Editor intuitif yang memungkinkan Anda mengisi dan menyesuaikan surat hanya dalam hitungan detik.</p>
-        </div>
-
-        <!-- Feature 3 -->
-        <div class="feature-card group bg-white rounded-3xl p-8 shadow-sm hover:shadow-2xl border border-gray-100 hover:border-green-200 transition-all duration-500 hover:-translate-y-2" data-reveal="up" data-delay="200">
-          <div class="w-14 h-14 bg-gradient-to-br from-green-500 to-green-700 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 shadow-lg shadow-green-200">
-            <i class="fa-solid fa-file-pdf text-white text-xl"></i>
-          </div>
-          <h3 class="text-xl font-bold text-gray-900 mb-3">Export PDF</h3>
-          <p class="text-gray-500 leading-relaxed text-sm">Langsung unduh surat dalam format PDF berkualitas tinggi, siap cetak dan dikirimkan.</p>
-        </div>
-
-        <!-- Feature 4 -->
-        <div class="feature-card group bg-white rounded-3xl p-8 shadow-sm hover:shadow-2xl border border-gray-100 hover:border-amber-200 transition-all duration-500 hover:-translate-y-2" data-reveal="up" data-delay="300">
-          <div class="w-14 h-14 bg-gradient-to-br from-amber-500 to-amber-700 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 shadow-lg shadow-amber-200">
-            <i class="fa-solid fa-floppy-disk text-white text-xl"></i>
-          </div>
-          <h3 class="text-xl font-bold text-gray-900 mb-3">Simpan Draft</h3>
-          <p class="text-gray-500 leading-relaxed text-sm">Simpan pekerjaan Anda dan lanjutkan kapan saja. Semua draft tersimpan aman di perangkat Anda.</p>
-        </div>
-      </div>
-
-      <!-- Feature Screenshots -->
-      <div class="mt-20 lg:mt-28" data-reveal="up">
-        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 lg:gap-6">
-          <div class="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
-            <img src="screenshoots/search-letter.jpeg" alt="Cari template surat" class="w-full rounded-2xl group-hover:scale-105 transition-transform duration-500" />
-            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl flex items-end p-4">
-              <span class="text-white text-xs font-semibold">Cari Template</span>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+            <!-- Section Header -->
+            <div class="text-center max-w-3xl mx-auto mb-16 lg:mb-20" data-reveal="up">
+                <span
+                    class="inline-block bg-primary-100 text-primary-700 text-sm font-semibold px-4 py-1.5 rounded-full mb-4">Fitur
+                    Unggulan</span>
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 mb-5">
+                    Semua yang Anda Butuhkan untuk <span class="text-primary-600">Membuat Surat</span>
+                </h2>
+                <p class="text-lg text-gray-500 leading-relaxed">
+                    Terator dirancang untuk mempermudah pembuatan surat resmi dengan fitur-fitur canggih yang intuitif
+                    dan mudah digunakan.
+                </p>
             </div>
-          </div>
-          <div class="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
-            <img src="screenshoots/letter-editor.jpeg" alt="Editor surat" class="w-full rounded-2xl group-hover:scale-105 transition-transform duration-500" />
-            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl flex items-end p-4">
-              <span class="text-white text-xs font-semibold">Editor Surat</span>
+
+            <!-- Features Grid -->
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+                <!-- Feature 1 -->
+                <div class="feature-card group bg-white rounded-3xl p-8 shadow-sm hover:shadow-2xl border border-gray-100 hover:border-primary-200 transition-all duration-500 hover:-translate-y-2"
+                    data-reveal="up" data-delay="0">
+                    <div
+                        class="w-14 h-14 bg-gradient-to-br from-primary-500 to-primary-700 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 shadow-lg shadow-primary-200">
+                        <i class="fa-solid fa-file-lines text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Ratusan Template</h3>
+                    <p class="text-gray-500 leading-relaxed text-sm">Koleksi lengkap template surat resmi, dinas,
+                        pribadi, dan bisnis yang siap pakai kapan saja.</p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="feature-card group bg-white rounded-3xl p-8 shadow-sm hover:shadow-2xl border border-gray-100 hover:border-accent-200 transition-all duration-500 hover:-translate-y-2"
+                    data-reveal="up" data-delay="100">
+                    <div
+                        class="w-14 h-14 bg-gradient-to-br from-accent-500 to-accent-700 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 shadow-lg shadow-accent-200">
+                        <i class="fa-solid fa-pen-to-square text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Edit Cepat</h3>
+                    <p class="text-gray-500 leading-relaxed text-sm">Editor intuitif yang memungkinkan Anda mengisi dan
+                        menyesuaikan surat hanya dalam hitungan detik.</p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="feature-card group bg-white rounded-3xl p-8 shadow-sm hover:shadow-2xl border border-gray-100 hover:border-green-200 transition-all duration-500 hover:-translate-y-2"
+                    data-reveal="up" data-delay="200">
+                    <div
+                        class="w-14 h-14 bg-gradient-to-br from-green-500 to-green-700 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 shadow-lg shadow-green-200">
+                        <i class="fa-solid fa-file-pdf text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Export PDF</h3>
+                    <p class="text-gray-500 leading-relaxed text-sm">Langsung unduh surat dalam format PDF berkualitas
+                        tinggi, siap cetak dan dikirimkan.</p>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="feature-card group bg-white rounded-3xl p-8 shadow-sm hover:shadow-2xl border border-gray-100 hover:border-amber-200 transition-all duration-500 hover:-translate-y-2"
+                    data-reveal="up" data-delay="300">
+                    <div
+                        class="w-14 h-14 bg-gradient-to-br from-amber-500 to-amber-700 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 shadow-lg shadow-amber-200">
+                        <i class="fa-solid fa-floppy-disk text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Simpan Draft</h3>
+                    <p class="text-gray-500 leading-relaxed text-sm">Simpan pekerjaan Anda dan lanjutkan kapan saja.
+                        Semua draft tersimpan aman di perangkat Anda.</p>
+                </div>
             </div>
-          </div>
-          <div class="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
-            <img src="screenshoots/preview-letter.jpeg" alt="Preview surat" class="w-full rounded-2xl group-hover:scale-105 transition-transform duration-500" />
-            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl flex items-end p-4">
-              <span class="text-white text-xs font-semibold">Preview Surat</span>
+
+            <!-- Feature Screenshots -->
+            <div class="mt-20 lg:mt-28" data-reveal="up">
+                <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 lg:gap-6">
+                    <div
+                        class="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+                        <img src="screenshoots/search-letter.jpeg" alt="Cari template surat"
+                            class="w-full rounded-2xl group-hover:scale-105 transition-transform duration-500" />
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl flex items-end p-4">
+                            <span class="text-white text-xs font-semibold">Cari Template</span>
+                        </div>
+                    </div>
+                    <div
+                        class="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+                        <img src="screenshoots/letter-editor.jpeg" alt="Editor surat"
+                            class="w-full rounded-2xl group-hover:scale-105 transition-transform duration-500" />
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl flex items-end p-4">
+                            <span class="text-white text-xs font-semibold">Editor Surat</span>
+                        </div>
+                    </div>
+                    <div
+                        class="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+                        <img src="screenshoots/preview-letter.jpeg" alt="Preview surat"
+                            class="w-full rounded-2xl group-hover:scale-105 transition-transform duration-500" />
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl flex items-end p-4">
+                            <span class="text-white text-xs font-semibold">Preview Surat</span>
+                        </div>
+                    </div>
+                    <div
+                        class="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+                        <img src="screenshoots/download-letter.jpeg" alt="Download surat"
+                            class="w-full rounded-2xl group-hover:scale-105 transition-transform duration-500" />
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl flex items-end p-4">
+                            <span class="text-white text-xs font-semibold">Download Surat</span>
+                        </div>
+                    </div>
+                    <div
+                        class="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 col-span-2 sm:col-span-1">
+                        <img src="screenshoots/my-file.jpeg" alt="File saya"
+                            class="w-full rounded-2xl group-hover:scale-105 transition-transform duration-500" />
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl flex items-end p-4">
+                            <span class="text-white text-xs font-semibold">File Tersimpan</span>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-          <div class="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
-            <img src="screenshoots/download-letter.jpeg" alt="Download surat" class="w-full rounded-2xl group-hover:scale-105 transition-transform duration-500" />
-            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl flex items-end p-4">
-              <span class="text-white text-xs font-semibold">Download Surat</span>
+        </div>
+    </section>
+
+    <!-- ==================== CARA KERJA ==================== -->
+    <section id="cara-kerja" class="py-24 lg:py-32 bg-white relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Section Header -->
+            <div class="text-center max-w-3xl mx-auto mb-16 lg:mb-20" data-reveal="up">
+                <span
+                    class="inline-block bg-accent-100 text-accent-700 text-sm font-semibold px-4 py-1.5 rounded-full mb-4">Cara
+                    Kerja</span>
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 mb-5">
+                    Tiga Langkah <span class="text-primary-600">Mudah</span>
+                </h2>
+                <p class="text-lg text-gray-500 leading-relaxed">
+                    Tidak perlu keahlian khusus. Siapapun bisa membuat surat resmi profesional hanya dalam hitungan
+                    menit.
+                </p>
             </div>
-          </div>
-          <div class="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 col-span-2 sm:col-span-1">
-            <img src="screenshoots/my-file.jpeg" alt="File saya" class="w-full rounded-2xl group-hover:scale-105 transition-transform duration-500" />
-            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl flex items-end p-4">
-              <span class="text-white text-xs font-semibold">File Tersimpan</span>
+
+            <!-- Steps -->
+            <div class="grid md:grid-cols-3 gap-8 lg:gap-12 relative">
+                <!-- Connector Line (Desktop) -->
+                <div
+                    class="hidden md:block absolute top-24 left-[20%] right-[20%] h-0.5 bg-gradient-to-r from-primary-200 via-accent-200 to-green-200">
+                </div>
+
+                <!-- Step 1 -->
+                <div class="relative text-center" data-reveal="up" data-delay="0">
+                    <div
+                        class="relative z-10 w-20 h-20 bg-gradient-to-br from-primary-500 to-primary-700 rounded-3xl flex items-center justify-center mx-auto mb-8 shadow-xl shadow-primary-200 rotate-3 hover:rotate-0 transition-transform duration-500">
+                        <span class="text-white text-2xl font-black">1</span>
+                    </div>
+                    <div class="bg-gray-50 rounded-3xl p-8 border border-gray-100">
+                        <div class="w-16 h-16 bg-primary-50 rounded-2xl flex items-center justify-center mx-auto mb-5">
+                            <i class="fa-solid fa-magnifying-glass text-primary-600 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Pilih Template</h3>
+                        <p class="text-gray-500 text-sm leading-relaxed">Telusuri ratusan template surat yang tersedia
+                            dan pilih yang sesuai kebutuhan Anda.</p>
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="relative text-center" data-reveal="up" data-delay="150">
+                    <div
+                        class="relative z-10 w-20 h-20 bg-gradient-to-br from-accent-500 to-accent-700 rounded-3xl flex items-center justify-center mx-auto mb-8 shadow-xl shadow-accent-200 -rotate-3 hover:rotate-0 transition-transform duration-500">
+                        <span class="text-white text-2xl font-black">2</span>
+                    </div>
+                    <div class="bg-gray-50 rounded-3xl p-8 border border-gray-100">
+                        <div class="w-16 h-16 bg-accent-50 rounded-2xl flex items-center justify-center mx-auto mb-5">
+                            <i class="fa-solid fa-keyboard text-accent-600 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Isi Data</h3>
+                        <p class="text-gray-500 text-sm leading-relaxed">Lengkapi formulir yang tersedia dengan data
+                            yang diperlukan. Simpel dan cepat!</p>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="relative text-center" data-reveal="up" data-delay="300">
+                    <div
+                        class="relative z-10 w-20 h-20 bg-gradient-to-br from-green-500 to-green-700 rounded-3xl flex items-center justify-center mx-auto mb-8 shadow-xl shadow-green-200 rotate-3 hover:rotate-0 transition-transform duration-500">
+                        <span class="text-white text-2xl font-black">3</span>
+                    </div>
+                    <div class="bg-gray-50 rounded-3xl p-8 border border-gray-100">
+                        <div class="w-16 h-16 bg-green-50 rounded-2xl flex items-center justify-center mx-auto mb-5">
+                            <i class="fa-solid fa-download text-green-600 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Unduh / Cetak</h3>
+                        <p class="text-gray-500 text-sm leading-relaxed">Unduh surat dalam format PDF atau cetak
+                            langsung. Surat resmi Anda siap digunakan!</p>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ==================== CARA KERJA ==================== -->
-  <section id="cara-kerja" class="py-24 lg:py-32 bg-white relative overflow-hidden">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <!-- Section Header -->
-      <div class="text-center max-w-3xl mx-auto mb-16 lg:mb-20" data-reveal="up">
-        <span class="inline-block bg-accent-100 text-accent-700 text-sm font-semibold px-4 py-1.5 rounded-full mb-4">Cara Kerja</span>
-        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 mb-5">
-          Tiga Langkah <span class="text-primary-600">Mudah</span>
-        </h2>
-        <p class="text-lg text-gray-500 leading-relaxed">
-          Tidak perlu keahlian khusus. Siapapun bisa membuat surat resmi profesional hanya dalam hitungan menit.
-        </p>
-      </div>
+    <!-- ==================== TUTORIAL VIDEO ==================== -->
+    <section id="tutorial" class="py-24 lg:py-32 bg-gray-50 relative overflow-hidden">
+        <!-- Decorative -->
+        <div class="absolute inset-0">
+            <div class="absolute top-20 left-10 w-72 h-72 bg-primary-100/40 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-20 right-10 w-60 h-60 bg-accent-100/40 rounded-full blur-3xl"></div>
+        </div>
 
-      <!-- Steps -->
-      <div class="grid md:grid-cols-3 gap-8 lg:gap-12 relative">
-        <!-- Connector Line (Desktop) -->
-        <div class="hidden md:block absolute top-24 left-[20%] right-[20%] h-0.5 bg-gradient-to-r from-primary-200 via-accent-200 to-green-200"></div>
-
-        <!-- Step 1 -->
-        <div class="relative text-center" data-reveal="up" data-delay="0">
-          <div class="relative z-10 w-20 h-20 bg-gradient-to-br from-primary-500 to-primary-700 rounded-3xl flex items-center justify-center mx-auto mb-8 shadow-xl shadow-primary-200 rotate-3 hover:rotate-0 transition-transform duration-500">
-            <span class="text-white text-2xl font-black">1</span>
-          </div>
-          <div class="bg-gray-50 rounded-3xl p-8 border border-gray-100">
-            <div class="w-16 h-16 bg-primary-50 rounded-2xl flex items-center justify-center mx-auto mb-5">
-              <i class="fa-solid fa-magnifying-glass text-primary-600 text-2xl"></i>
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+            <div class="text-center max-w-3xl mx-auto mb-12 lg:mb-16" data-reveal="up">
+                <span class="inline-block bg-red-100 text-red-600 text-sm font-semibold px-4 py-1.5 rounded-full mb-4">
+                    <i class="fa-brands fa-youtube mr-2"></i>Video Tutorial
+                </span>
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 mb-5">
+                    Buat Surat dalam <span class="text-primary-600">1 Menit!</span>
+                </h2>
+                <p class="text-lg text-gray-500 leading-relaxed">
+                    Lihat betapa mudahnya membuat surat resmi menggunakan Terator. Ikuti tutorial singkat berikut ini.
+                </p>
             </div>
-            <h3 class="text-xl font-bold text-gray-900 mb-3">Pilih Template</h3>
-            <p class="text-gray-500 text-sm leading-relaxed">Telusuri ratusan template surat yang tersedia dan pilih yang sesuai kebutuhan Anda.</p>
-          </div>
-        </div>
 
-        <!-- Step 2 -->
-        <div class="relative text-center" data-reveal="up" data-delay="150">
-          <div class="relative z-10 w-20 h-20 bg-gradient-to-br from-accent-500 to-accent-700 rounded-3xl flex items-center justify-center mx-auto mb-8 shadow-xl shadow-accent-200 -rotate-3 hover:rotate-0 transition-transform duration-500">
-            <span class="text-white text-2xl font-black">2</span>
-          </div>
-          <div class="bg-gray-50 rounded-3xl p-8 border border-gray-100">
-            <div class="w-16 h-16 bg-accent-50 rounded-2xl flex items-center justify-center mx-auto mb-5">
-              <i class="fa-solid fa-keyboard text-accent-600 text-2xl"></i>
+            <!-- YouTube Embed -->
+            <div class="relative" data-reveal="up">
+                <div
+                    class="bg-gradient-to-br from-primary-600 to-accent-600 rounded-3xl p-1.5 shadow-2xl shadow-primary-200/50">
+                    <div class="relative w-full overflow-hidden rounded-[1.3rem] bg-black"
+                        style="padding-bottom: 56.25%;">
+                        <iframe class="absolute inset-0 w-full h-full"
+                            src="https://www.youtube.com/embed/XgT0B6bd1MM?rel=0"
+                            title="Tutorial Terator - Buat Surat dalam 1 Menit" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen></iframe>
+                    </div>
+                </div>
+                <!-- Floating label -->
+                <div
+                    class="absolute -bottom-5 left-1/2 -translate-x-1/2 bg-white rounded-full px-6 py-2.5 shadow-xl border border-gray-100 flex items-center gap-2">
+                    <i class="fa-solid fa-clock text-primary-600 text-sm"></i>
+                    <span class="text-sm font-semibold text-gray-700">Durasi: Hanya 1 Menit!</span>
+                </div>
             </div>
-            <h3 class="text-xl font-bold text-gray-900 mb-3">Isi Data</h3>
-            <p class="text-gray-500 text-sm leading-relaxed">Lengkapi formulir yang tersedia dengan data yang diperlukan. Simpel dan cepat!</p>
-          </div>
+        </div>
+    </section>
+
+    <!-- ==================== DOWNLOAD SECTION ==================== -->
+    <section id="download" class="py-24 lg:py-32 relative overflow-hidden">
+        <!-- Background -->
+        <div class="absolute inset-0 bg-gradient-to-br from-primary-900 via-primary-800 to-primary-950"></div>
+        <div class="absolute inset-0 overflow-hidden">
+            <div class="absolute top-0 left-1/4 w-[500px] h-[500px] bg-accent-500/10 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-primary-400/10 rounded-full blur-3xl"></div>
+        </div>
+        <div class="absolute inset-0 opacity-[0.03]"
+            style="background-image: url('data:image/svg+xml,%3Csvg width=&quot;60&quot; height=&quot;60&quot; viewBox=&quot;0 0 60 60&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;%3E%3Cg fill=&quot;none&quot; fill-rule=&quot;evenodd&quot;%3E%3Cg fill=&quot;%23ffffff&quot; fill-opacity=&quot;1&quot;%3E%3Cpath d=&quot;M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z&quot;/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');">
         </div>
 
-        <!-- Step 3 -->
-        <div class="relative text-center" data-reveal="up" data-delay="300">
-          <div class="relative z-10 w-20 h-20 bg-gradient-to-br from-green-500 to-green-700 rounded-3xl flex items-center justify-center mx-auto mb-8 shadow-xl shadow-green-200 rotate-3 hover:rotate-0 transition-transform duration-500">
-            <span class="text-white text-2xl font-black">3</span>
-          </div>
-          <div class="bg-gray-50 rounded-3xl p-8 border border-gray-100">
-            <div class="w-16 h-16 bg-green-50 rounded-2xl flex items-center justify-center mx-auto mb-5">
-              <i class="fa-solid fa-download text-green-600 text-2xl"></i>
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <div data-reveal="up">
+                <div
+                    class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-5 py-2 mb-6">
+                    <i class="fa-brands fa-google-play text-white"></i>
+                    <span class="text-white/90 text-sm font-medium">Tersedia di Google Play</span>
+                </div>
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white mb-6 leading-tight">
+                    Siap Membuat Surat<br />dengan Mudah?
+                </h2>
+                <p class="text-lg text-white/60 mb-10 max-w-2xl mx-auto leading-relaxed">
+                    Unduh Terator sekarang dan rasakan kemudahan membuat surat resmi profesional langsung dari
+                    smartphone Anda. Gratis!
+                </p>
+                <a href="https://play.google.com/store/apps/details?id=com.caraguna.terator&hl=en" target="_blank"
+                    rel="noopener noreferrer"
+                    class="inline-block hover:-translate-y-1 transition-transform duration-300">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
+                        alt="Download di Google Play Store" class="h-16 sm:h-20 mx-auto drop-shadow-2xl" />
+                </a>
             </div>
-            <h3 class="text-xl font-bold text-gray-900 mb-3">Unduh / Cetak</h3>
-            <p class="text-gray-500 text-sm leading-relaxed">Unduh surat dalam format PDF atau cetak langsung. Surat resmi Anda siap digunakan!</p>
-          </div>
+
+            <!-- App Screenshots Carousel -->
+            <div class="mt-16 flex justify-center gap-4 sm:gap-6" data-reveal="up">
+                <div
+                    class="bg-gray-900 rounded-[2rem] p-2 shadow-2xl border border-white/10 w-36 sm:w-44 -rotate-6 hover:rotate-0 transition-transform duration-500">
+                    <img src="screenshoots/home.jpeg" alt="Home Terator" class="rounded-[1.6rem] w-full" />
+                </div>
+                <div
+                    class="bg-gray-900 rounded-[2rem] p-2 shadow-2xl border border-white/10 w-36 sm:w-44 rotate-0 hover:rotate-3 transition-transform duration-500 -mt-4">
+                    <img src="screenshoots/letter-editor.jpeg" alt="Editor Surat" class="rounded-[1.6rem] w-full" />
+                </div>
+                <div
+                    class="bg-gray-900 rounded-[2rem] p-2 shadow-2xl border border-white/10 w-36 sm:w-44 rotate-6 hover:rotate-0 transition-transform duration-500 hidden sm:block">
+                    <img src="screenshoots/preview-letter.jpeg" alt="Preview Surat" class="rounded-[1.6rem] w-full" />
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ==================== TUTORIAL VIDEO ==================== -->
-  <section id="tutorial" class="py-24 lg:py-32 bg-gray-50 relative overflow-hidden">
-    <!-- Decorative -->
-    <div class="absolute inset-0">
-      <div class="absolute top-20 left-10 w-72 h-72 bg-primary-100/40 rounded-full blur-3xl"></div>
-      <div class="absolute bottom-20 right-10 w-60 h-60 bg-accent-100/40 rounded-full blur-3xl"></div>
-    </div>
+    <!-- ==================== KONTAK ==================== -->
+    <section id="kontak" class="py-24 lg:py-32 bg-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Section Header -->
+            <div class="text-center max-w-3xl mx-auto mb-16" data-reveal="up">
+                <span
+                    class="inline-block bg-green-100 text-green-700 text-sm font-semibold px-4 py-1.5 rounded-full mb-4">Hubungi
+                    Kami</span>
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 mb-5">
+                    Ada Pertanyaan? <span class="text-primary-600">Kami Siap Membantu</span>
+                </h2>
+                <p class="text-lg text-gray-500 leading-relaxed">
+                    Jangan ragu untuk menghubungi kami. Tim kami akan dengan senang hati menjawab pertanyaan Anda.
+                </p>
+            </div>
 
-    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-      <div class="text-center max-w-3xl mx-auto mb-12 lg:mb-16" data-reveal="up">
-        <span class="inline-block bg-red-100 text-red-600 text-sm font-semibold px-4 py-1.5 rounded-full mb-4">
-          <i class="fa-brands fa-youtube mr-2"></i>Video Tutorial
-        </span>
-        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 mb-5">
-          Buat Surat dalam <span class="text-primary-600">1 Menit!</span>
-        </h2>
-        <p class="text-lg text-gray-500 leading-relaxed">
-          Lihat betapa mudahnya membuat surat resmi menggunakan Terator. Ikuti tutorial singkat berikut ini.
-        </p>
-      </div>
+            <!-- Contact Cards -->
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 max-w-4xl mx-auto">
+                <!-- Email -->
+                <a href="mailto:halo@nexadream.id"
+                    class="group bg-gray-50 hover:bg-primary-50 rounded-3xl p-8 text-center border border-gray-100 hover:border-primary-200 transition-all duration-500 hover:-translate-y-2 hover:shadow-xl"
+                    data-reveal="up" data-delay="0">
+                    <div
+                        class="w-16 h-16 bg-primary-100 group-hover:bg-primary-200 rounded-2xl flex items-center justify-center mx-auto mb-5 transition-colors duration-300">
+                        <i class="fa-solid fa-envelope text-primary-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Email</h3>
+                    <p class="text-primary-600 font-medium text-sm">halo@nexadream.id</p>
+                </a>
 
-      <!-- YouTube Embed -->
-      <div class="relative" data-reveal="up">
-        <div class="bg-gradient-to-br from-primary-600 to-accent-600 rounded-3xl p-1.5 shadow-2xl shadow-primary-200/50">
-          <div class="relative w-full overflow-hidden rounded-[1.3rem] bg-black" style="padding-bottom: 56.25%;">
-            <iframe
-              class="absolute inset-0 w-full h-full"
-              src="https://www.youtube.com/embed/XgT0B6bd1MM?rel=0"
-              title="Tutorial Terator - Buat Surat dalam 1 Menit"
-              frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowfullscreen
-            ></iframe>
-          </div>
+                <!-- WhatsApp -->
+                <a href="https://wa.me/6285159664106" target="_blank" rel="noopener noreferrer"
+                    class="group bg-gray-50 hover:bg-green-50 rounded-3xl p-8 text-center border border-gray-100 hover:border-green-200 transition-all duration-500 hover:-translate-y-2 hover:shadow-xl"
+                    data-reveal="up" data-delay="100">
+                    <div
+                        class="w-16 h-16 bg-green-100 group-hover:bg-green-200 rounded-2xl flex items-center justify-center mx-auto mb-5 transition-colors duration-300">
+                        <i class="fa-brands fa-whatsapp text-green-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">WhatsApp</h3>
+                    <p class="text-green-600 font-medium text-sm">+62 851-5966-4106</p>
+                </a>
+
+                <!-- Lokasi -->
+                <div class="group bg-gray-50 hover:bg-amber-50 rounded-3xl p-8 text-center border border-gray-100 hover:border-amber-200 transition-all duration-500 hover:-translate-y-2 hover:shadow-xl sm:col-span-2 lg:col-span-1"
+                    data-reveal="up" data-delay="200">
+                    <div
+                        class="w-16 h-16 bg-amber-100 group-hover:bg-amber-200 rounded-2xl flex items-center justify-center mx-auto mb-5 transition-colors duration-300">
+                        <i class="fa-solid fa-location-dot text-amber-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Lokasi</h3>
+                    <p class="text-amber-600 font-medium text-sm">Jember, Jawa Timur</p>
+                </div>
+            </div>
         </div>
-        <!-- Floating label -->
-        <div class="absolute -bottom-5 left-1/2 -translate-x-1/2 bg-white rounded-full px-6 py-2.5 shadow-xl border border-gray-100 flex items-center gap-2">
-          <i class="fa-solid fa-clock text-primary-600 text-sm"></i>
-          <span class="text-sm font-semibold text-gray-700">Durasi: Hanya 1 Menit!</span>
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ==================== DOWNLOAD SECTION ==================== -->
-  <section id="download" class="py-24 lg:py-32 relative overflow-hidden">
-    <!-- Background -->
-    <div class="absolute inset-0 bg-gradient-to-br from-primary-900 via-primary-800 to-primary-950"></div>
-    <div class="absolute inset-0 overflow-hidden">
-      <div class="absolute top-0 left-1/4 w-[500px] h-[500px] bg-accent-500/10 rounded-full blur-3xl"></div>
-      <div class="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-primary-400/10 rounded-full blur-3xl"></div>
-    </div>
-    <div class="absolute inset-0 opacity-[0.03]" style="background-image: url('data:image/svg+xml,%3Csvg width=&quot;60&quot; height=&quot;60&quot; viewBox=&quot;0 0 60 60&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;%3E%3Cg fill=&quot;none&quot; fill-rule=&quot;evenodd&quot;%3E%3Cg fill=&quot;%23ffffff&quot; fill-opacity=&quot;1&quot;%3E%3Cpath d=&quot;M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z&quot;/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
-
-    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-      <div data-reveal="up">
-        <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-5 py-2 mb-6">
-          <i class="fa-brands fa-google-play text-white"></i>
-          <span class="text-white/90 text-sm font-medium">Tersedia di Google Play</span>
-        </div>
-        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white mb-6 leading-tight">
-          Siap Membuat Surat<br/>dengan Mudah?
-        </h2>
-        <p class="text-lg text-white/60 mb-10 max-w-2xl mx-auto leading-relaxed">
-          Unduh Terator sekarang dan rasakan kemudahan membuat surat resmi profesional langsung dari smartphone Anda. Gratis!
-        </p>
-        <a href="https://play.google.com/store/apps/details?id=com.caraguna.terator&hl=en" target="_blank" rel="noopener noreferrer"
-           class="inline-block hover:-translate-y-1 transition-transform duration-300">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
-               alt="Download di Google Play Store"
-               class="h-16 sm:h-20 mx-auto drop-shadow-2xl" />
-        </a>
-      </div>
-
-      <!-- App Screenshots Carousel -->
-      <div class="mt-16 flex justify-center gap-4 sm:gap-6" data-reveal="up">
-        <div class="bg-gray-900 rounded-[2rem] p-2 shadow-2xl border border-white/10 w-36 sm:w-44 -rotate-6 hover:rotate-0 transition-transform duration-500">
-          <img src="screenshoots/home.jpeg" alt="Home Terator" class="rounded-[1.6rem] w-full" />
-        </div>
-        <div class="bg-gray-900 rounded-[2rem] p-2 shadow-2xl border border-white/10 w-36 sm:w-44 rotate-0 hover:rotate-3 transition-transform duration-500 -mt-4">
-          <img src="screenshoots/letter-editor.jpeg" alt="Editor Surat" class="rounded-[1.6rem] w-full" />
-        </div>
-        <div class="bg-gray-900 rounded-[2rem] p-2 shadow-2xl border border-white/10 w-36 sm:w-44 rotate-6 hover:rotate-0 transition-transform duration-500 hidden sm:block">
-          <img src="screenshoots/preview-letter.jpeg" alt="Preview Surat" class="rounded-[1.6rem] w-full" />
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ==================== KONTAK ==================== -->
-  <section id="kontak" class="py-24 lg:py-32 bg-white relative">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <!-- Section Header -->
-      <div class="text-center max-w-3xl mx-auto mb-16" data-reveal="up">
-        <span class="inline-block bg-green-100 text-green-700 text-sm font-semibold px-4 py-1.5 rounded-full mb-4">Hubungi Kami</span>
-        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 mb-5">
-          Ada Pertanyaan? <span class="text-primary-600">Kami Siap Membantu</span>
-        </h2>
-        <p class="text-lg text-gray-500 leading-relaxed">
-          Jangan ragu untuk menghubungi kami. Tim kami akan dengan senang hati menjawab pertanyaan Anda.
-        </p>
-      </div>
-
-      <!-- Contact Cards -->
-      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 max-w-4xl mx-auto">
-        <!-- Email -->
-        <a href="mailto:halo@nexadream.id" class="group bg-gray-50 hover:bg-primary-50 rounded-3xl p-8 text-center border border-gray-100 hover:border-primary-200 transition-all duration-500 hover:-translate-y-2 hover:shadow-xl" data-reveal="up" data-delay="0">
-          <div class="w-16 h-16 bg-primary-100 group-hover:bg-primary-200 rounded-2xl flex items-center justify-center mx-auto mb-5 transition-colors duration-300">
-            <i class="fa-solid fa-envelope text-primary-600 text-2xl"></i>
-          </div>
-          <h3 class="text-lg font-bold text-gray-900 mb-2">Email</h3>
-          <p class="text-primary-600 font-medium text-sm">halo@nexadream.id</p>
-        </a>
-
-        <!-- WhatsApp -->
-        <a href="https://wa.me/6285159664106" target="_blank" rel="noopener noreferrer" class="group bg-gray-50 hover:bg-green-50 rounded-3xl p-8 text-center border border-gray-100 hover:border-green-200 transition-all duration-500 hover:-translate-y-2 hover:shadow-xl" data-reveal="up" data-delay="100">
-          <div class="w-16 h-16 bg-green-100 group-hover:bg-green-200 rounded-2xl flex items-center justify-center mx-auto mb-5 transition-colors duration-300">
-            <i class="fa-brands fa-whatsapp text-green-600 text-2xl"></i>
-          </div>
-          <h3 class="text-lg font-bold text-gray-900 mb-2">WhatsApp</h3>
-          <p class="text-green-600 font-medium text-sm">+62 851-5966-4106</p>
-        </a>
-
-        <!-- Lokasi -->
-        <div class="group bg-gray-50 hover:bg-amber-50 rounded-3xl p-8 text-center border border-gray-100 hover:border-amber-200 transition-all duration-500 hover:-translate-y-2 hover:shadow-xl sm:col-span-2 lg:col-span-1" data-reveal="up" data-delay="200">
-          <div class="w-16 h-16 bg-amber-100 group-hover:bg-amber-200 rounded-2xl flex items-center justify-center mx-auto mb-5 transition-colors duration-300">
-            <i class="fa-solid fa-location-dot text-amber-600 text-2xl"></i>
-          </div>
-          <h3 class="text-lg font-bold text-gray-900 mb-2">Lokasi</h3>
-          <p class="text-amber-600 font-medium text-sm">Jember, Jawa Timur</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ==================== FOOTER ==================== -->
-  <footer class="bg-gray-950 text-white relative overflow-hidden">
-    <!-- Decorative -->
-    <div class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary-500/50 to-transparent"></div>
-
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-      <div class="grid md:grid-cols-3 gap-12">
-        <!-- Brand -->
-        <div>
-          <div class="flex items-center gap-3 mb-5">
-            <img src="logo/terator-white.png" alt="Logo Terator" class="h-10 w-10 rounded-xl" />
-            <span class="font-extrabold text-xl">Terator</span>
-          </div>
-          <p class="text-gray-400 text-sm leading-relaxed mb-6 max-w-xs">
-            Aplikasi generator template surat resmi terlengkap. Buat surat profesional dalam hitungan detik.
-          </p>
-          <div class="flex items-center gap-3">
-            <a href="#" class="w-10 h-10 bg-white/5 hover:bg-primary-600 border border-white/10 rounded-xl flex items-center justify-center transition-all duration-300 hover:-translate-y-1" aria-label="Instagram">
-              <i class="fa-brands fa-instagram text-gray-400 hover:text-white"></i>
-            </a>
-            <a href="#" class="w-10 h-10 bg-white/5 hover:bg-primary-600 border border-white/10 rounded-xl flex items-center justify-center transition-all duration-300 hover:-translate-y-1" aria-label="Facebook">
-              <i class="fa-brands fa-facebook-f text-gray-400 hover:text-white"></i>
-            </a>
-            <a href="#" class="w-10 h-10 bg-white/5 hover:bg-primary-600 border border-white/10 rounded-xl flex items-center justify-center transition-all duration-300 hover:-translate-y-1" aria-label="Twitter">
-              <i class="fa-brands fa-x-twitter text-gray-400 hover:text-white"></i>
-            </a>
-            <a href="https://www.youtube.com/@nexadream" target="_blank" rel="noopener noreferrer" class="w-10 h-10 bg-white/5 hover:bg-red-600 border border-white/10 rounded-xl flex items-center justify-center transition-all duration-300 hover:-translate-y-1" aria-label="YouTube">
-              <i class="fa-brands fa-youtube text-gray-400 hover:text-white"></i>
-            </a>
-          </div>
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="bg-gray-950 text-white relative overflow-hidden">
+        <!-- Decorative -->
+        <div
+            class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary-500/50 to-transparent">
         </div>
 
-        <!-- Quick Links -->
-        <div>
-          <h4 class="text-sm font-bold uppercase tracking-wider text-gray-300 mb-5">Navigasi</h4>
-          <ul class="space-y-3">
-            <li><a href="#fitur" class="text-gray-400 hover:text-white text-sm transition-colors duration-300 flex items-center gap-2"><i class="fa-solid fa-chevron-right text-[10px] text-primary-500"></i>Fitur</a></li>
-            <li><a href="#cara-kerja" class="text-gray-400 hover:text-white text-sm transition-colors duration-300 flex items-center gap-2"><i class="fa-solid fa-chevron-right text-[10px] text-primary-500"></i>Cara Kerja</a></li>
-            <li><a href="#tutorial" class="text-gray-400 hover:text-white text-sm transition-colors duration-300 flex items-center gap-2"><i class="fa-solid fa-chevron-right text-[10px] text-primary-500"></i>Tutorial</a></li>
-            <li><a href="#kontak" class="text-gray-400 hover:text-white text-sm transition-colors duration-300 flex items-center gap-2"><i class="fa-solid fa-chevron-right text-[10px] text-primary-500"></i>Kontak</a></li>
-            <li><a href="#download" class="text-gray-400 hover:text-white text-sm transition-colors duration-300 flex items-center gap-2"><i class="fa-solid fa-chevron-right text-[10px] text-primary-500"></i>Download</a></li>
-          </ul>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <div class="grid md:grid-cols-3 gap-12">
+                <!-- Brand -->
+                <div>
+                    <div class="flex items-center gap-3 mb-5">
+                        <img src="logo/terator-white.png" alt="Logo Terator" class="h-10 w-10 rounded-xl" />
+                        <span class="font-extrabold text-xl">Terator</span>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6 max-w-xs">
+                        Aplikasi generator template surat resmi terlengkap. Buat surat profesional dalam hitungan detik.
+                    </p>
+                    <div class="flex items-center gap-3">
+                        <a href="https://instagram.com/nexadream"
+                            class="w-10 h-10 bg-white/5 hover:bg-primary-600 border border-white/10 rounded-xl flex items-center justify-center transition-all duration-300 hover:-translate-y-1"
+                            aria-label="Instagram">
+                            <i class="fa-brands fa-instagram text-gray-400 hover:text-white"></i>
+                        </a>
+                        <a href="https://www.youtube.com/@nexadream" target="_blank" rel="noopener noreferrer"
+                            class="w-10 h-10 bg-white/5 hover:bg-red-600 border border-white/10 rounded-xl flex items-center justify-center transition-all duration-300 hover:-translate-y-1"
+                            aria-label="YouTube">
+                            <i class="fa-brands fa-youtube text-gray-400 hover:text-white"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-sm font-bold uppercase tracking-wider text-gray-300 mb-5">Navigasi</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#fitur"
+                                class="text-gray-400 hover:text-white text-sm transition-colors duration-300 flex items-center gap-2"><i
+                                    class="fa-solid fa-chevron-right text-[10px] text-primary-500"></i>Fitur</a></li>
+                        <li><a href="#cara-kerja"
+                                class="text-gray-400 hover:text-white text-sm transition-colors duration-300 flex items-center gap-2"><i
+                                    class="fa-solid fa-chevron-right text-[10px] text-primary-500"></i>Cara Kerja</a>
+                        </li>
+                        <li><a href="#tutorial"
+                                class="text-gray-400 hover:text-white text-sm transition-colors duration-300 flex items-center gap-2"><i
+                                    class="fa-solid fa-chevron-right text-[10px] text-primary-500"></i>Tutorial</a></li>
+                        <li><a href="#kontak"
+                                class="text-gray-400 hover:text-white text-sm transition-colors duration-300 flex items-center gap-2"><i
+                                    class="fa-solid fa-chevron-right text-[10px] text-primary-500"></i>Kontak</a></li>
+                        <li><a href="#download"
+                                class="text-gray-400 hover:text-white text-sm transition-colors duration-300 flex items-center gap-2"><i
+                                    class="fa-solid fa-chevron-right text-[10px] text-primary-500"></i>Download</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="text-sm font-bold uppercase tracking-wider text-gray-300 mb-5">Kontak</h4>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-envelope text-primary-500 mt-0.5 text-sm"></i>
+                            <a href="mailto:halo@nexadream.id"
+                                class="text-gray-400 hover:text-white text-sm transition-colors">halo@nexadream.id</a>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-brands fa-whatsapp text-green-500 mt-0.5 text-sm"></i>
+                            <a href="https://wa.me/6285159664106" target="_blank" rel="noopener noreferrer"
+                                class="text-gray-400 hover:text-white text-sm transition-colors">+62 851-5966-4106</a>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-location-dot text-amber-500 mt-0.5 text-sm"></i>
+                            <span class="text-gray-400 text-sm">Jember, Jawa Timur, Indonesia</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Divider & Bottom -->
+            <div
+                class="border-t border-white/10 mt-12 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+                <p class="text-gray-500 text-sm">
+                    &copy; 2024 Terator. Hak cipta dilindungi undang-undang.
+                </p>
+                <p class="text-gray-500 text-sm flex items-center gap-1.5">
+                    Powered by
+                    <a href="https://nexadream.id" target="_blank" rel="noopener noreferrer"
+                        class="text-primary-400 hover:text-primary-300 font-semibold transition-colors">nexadream.id</a>
+                </p>
+            </div>
         </div>
+    </footer>
 
-        <!-- Contact Info -->
-        <div>
-          <h4 class="text-sm font-bold uppercase tracking-wider text-gray-300 mb-5">Kontak</h4>
-          <ul class="space-y-4">
-            <li class="flex items-start gap-3">
-              <i class="fa-solid fa-envelope text-primary-500 mt-0.5 text-sm"></i>
-              <a href="mailto:halo@nexadream.id" class="text-gray-400 hover:text-white text-sm transition-colors">halo@nexadream.id</a>
-            </li>
-            <li class="flex items-start gap-3">
-              <i class="fa-brands fa-whatsapp text-green-500 mt-0.5 text-sm"></i>
-              <a href="https://wa.me/6285159664106" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white text-sm transition-colors">+62 851-5966-4106</a>
-            </li>
-            <li class="flex items-start gap-3">
-              <i class="fa-solid fa-location-dot text-amber-500 mt-0.5 text-sm"></i>
-              <span class="text-gray-400 text-sm">Jember, Jawa Timur, Indonesia</span>
-            </li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- Divider & Bottom -->
-      <div class="border-t border-white/10 mt-12 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-        <p class="text-gray-500 text-sm">
-          &copy; 2024 Terator. Hak cipta dilindungi undang-undang.
-        </p>
-        <p class="text-gray-500 text-sm flex items-center gap-1.5">
-          Powered by
-          <a href="https://nexadream.id" target="_blank" rel="noopener noreferrer" class="text-primary-400 hover:text-primary-300 font-semibold transition-colors">nexadream.id</a>
-        </p>
-      </div>
-    </div>
-  </footer>
-
-  <!-- ==================== SCRIPTS ==================== -->
-  <script src="script.js"></script>
+    <!-- ==================== SCRIPTS ==================== -->
+    <script src="script.js"></script>
 </body>
+
 </html>
